@@ -1,34 +1,42 @@
-<div layout="column" ng-cloak>
-	<form ng-submit="matchparser.submit(parserForm)" name="parserForm">
-		<h2>Sport text string parser</h2>
-		<fieldset>
-			<md-input-container>
-				<label>Input match string</label>
-				<textarea name="match" rows="3" cols="50" ng-model="matchparser.matchModel.match" md-minlength="10" md-maxlength="150" required></textarea>
-				<div ng-messages="parserForm.match.$error">
-					<div ng-message="required">This field is required.</div>
-				</div>
-			</md-input-container>
-		</fieldset>
-		<fieldset>
-			<p>
-				Sport kind: <span class="radioValue">{{ (matchparser.sports | filter:matchparser.matchModel.sport)[0].name }}</span>
-			</p>
-    		<md-divider></md-divider>
-    		<p>
-				<md-radio-group ng-model="matchparser.matchModel.sport">
-					<md-radio-button ng-repeat="sport in matchparser.sports" value="{{ sport.id }}">{{ sport.name }}</md-radio-button>
-				</md-radio-group>
-			<p>
-		</fieldset>
-		<fieldset>
-			<md-button type="submit" class="md-raised md-primary">Parse string</md-button>
-		</fieldset>
-	</form>
-	<!-- result -->
-	<div>
-		<h2>Parser result</h2>
-		<md-divider></md-divider>
-		<textarea rows="4" cols="50">{{ matchparser.result }}</textarea>
-	</div>
+<div class="layoutCenter">
+	<md-card>
+		<md-card-content>
+			<form ng-submit="matchparser.submit(parserForm)" name="parserForm">
+				<h2>Sport text string parser</h2>
+				<fieldset>
+					<md-input-container>
+						<label>Input match string</label>
+						<textarea name="match" rows="3" cols="200" ng-model="matchparser.matchModel.match" md-minlength="10" md-maxlength="150" required></textarea>
+						<div ng-messages="parserForm.match.$error">
+							<div ng-message="required">This field is required.</div>
+						</div>
+					</md-input-container>
+				</fieldset>
+				<fieldset>
+					<p>
+						Sport kind: <span class="radioValue">{{ (matchparser.sports | filter:matchparser.matchModel.sport)[0].name }}</span>
+					</p>
+		    		<md-divider></md-divider>
+		    		<p>
+						<md-radio-group ng-model="matchparser.matchModel.sport">
+							<md-radio-button ng-repeat="sport in matchparser.sports" value="{{ sport.id }}">{{ sport.name }}</md-radio-button>
+						</md-radio-group>
+					</p>
+				</fieldset>
+				<fieldset>
+					<md-button type="submit" class="md-raised md-primary">Parse string</md-button>
+				</fieldset>
+			</form>
+		</md-card-content>
+		<md-card-footer>
+			<!-- result -->
+			<div>
+				<h2>Parser result</h2>
+				<md-input-container>
+					<label>Output</label>
+					<textarea name="output" rows="4" cols="200">{{ matchparser.result }}</textarea>
+				</md-input-container>
+			</div>
+		</md-card-footer>
+	</md-card>
 </div>

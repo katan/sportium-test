@@ -3,7 +3,7 @@ angular.module('sportium.parser.sport', ['sportium.parser.sport.validation'])
 
 sport.$inject = ['validation'];
 function sport(validation) {
-	var sports = ["soccer","tenis","football"];
+	var sports = ["tenis","football","soccer"];
 	var factory = {
 		sports: sports, 			// property
 		parser: parser,				// method
@@ -23,6 +23,16 @@ function sport(validation) {
 
 			if (angular.isFunction(validation[sport])) {
 				matchParsed = validation[sport](match);
+			} else if (sport === "default") {
+				// Search for all sports available
+				for (var i = 0; i < sports.length; i++) {
+					if (angular.isFunction(validation[sports[i]])) {
+						matchParsed = validation[sports[i]](match);
+						if (angular.isObject(matchParsed)) {
+							return matchParsed;
+						}
+					}
+				}
 			} else {
 				throw new Error("Not exists a validation function for the '" + sport + "' sport");
 			}

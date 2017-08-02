@@ -1,4 +1,10 @@
 /* app css stylesheet */
+html, body {
+	background-color: #eee;
+}
+div.layoutCenter {
+    padding: 2% 20%;
+}
 span.radioValue {
 	font-weight: bold;
 	color: green;
