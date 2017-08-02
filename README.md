@@ -6,7 +6,7 @@ He realizado la prueba en el mismo día y por eso no me ha dado tiempo ha realiz
 
 ### Prerequisites
 
-Se necesita clonar el repositorio `sportium-test`. Para ello se necesita tener instalado Git: https://git-scm.com/
+Se necesita clonar el repositorio `sportium-test`. Para ello se necesita tener instalado Git: https://git-scm.com/.
 Se requiere Node.js y el package manager (npm) instalados. Se pueden instalar desde https://nodejs.org/.
 
 Una vez se tenga Git instalado el siguiente comando clonará el repositorio en la ruta donde se encuentre
