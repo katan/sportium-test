@@ -27,4 +27,4 @@ npm install
 npm start
 ```
 
-Ahora abre el navegador a localhost:8000/
+Ahora abre el navegador a http://localhost:8000/
